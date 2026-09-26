@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f2ec;
+  color: #2d2d2d;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+  background: white;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2d2d2d;
+}
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.hero h1 {
+  font-size: 70px;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.gomb {
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: #2d2d2d;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+}
+
+.szekcio {
+  padding: 80px 8%;
+}
+
+.szekcio h2 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.kartya-container {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.kartya {
+  background: white;
+  padding: 30px;
+  width: 250px;
+  border-radius: 15px;
+}
