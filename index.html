@@ -3,13 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Az első weboldalam</title>
+  <title>Maseniszta</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f2ec;
+      color: #2d2d2d;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 64px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      background: #2d2d2d;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Szia 👋</h1>
-  <p>Ez az első saját weboldalam.</p>
 
-  <button>Kattints rám</button>
+  <section class="hero">
+    <h1>Maseniszta</h1>
+
+    <p>
+      Kézzel készült dekorációk, egyedi tárgyak és kreatív ötletek.
+    </p>
+
+    <button>Nézd meg a munkáimat</button>
+  </section>
+
 </body>
 </html>
