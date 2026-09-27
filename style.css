@@ -10,16 +10,12 @@ body {
   position: relative;
   overflow-x: hidden;
 
-  background:
-    linear-gradient(rgba(244, 228, 201, 0.45), rgba(244, 228, 201, 0.45)),
-    url("images/pink-start2.jpg");
-
+  background-image: url("images/pink-start2.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center top;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
-/* háttérrétegek */
 
 body::before {
   content: "";
@@ -28,26 +24,12 @@ body::before {
   pointer-events: none;
   z-index: 0;
 
-  background:
-    url("images/dreamy-stars.jpg") center/cover no-repeat,
-    url("images/pastel-swirls.jpg") center/cover no-repeat;
-
-  opacity: 0.22;
-  mix-blend-mode: soft-light;
+  /* csak egy nagyon enyhe fátyol, hogy olvasható maradjon */
+  background: rgba(255, 239, 217, 0.12);
 }
 
 body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-
-  background:
-    url("images/pink-stars.jpg") center/cover no-repeat;
-
-  opacity: 0.14;
-  mix-blend-mode: screen;
+  display: none;
 }
 
 .topbar,
