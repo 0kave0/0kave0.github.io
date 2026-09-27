@@ -4,356 +4,302 @@
 
 body {
   margin: 0;
-  color: #48382f;
+  min-height: 100vh;
+  color: #493b2f;
   font-family: Georgia, "Times New Roman", serif;
 
   background:
-    radial-gradient(circle at 15% 20%, rgba(241, 186, 151, 0.55), transparent 30%),
-    radial-gradient(circle at 85% 10%, rgba(138, 151, 108, 0.5), transparent 32%),
-    radial-gradient(circle at 70% 70%, rgba(170, 111, 140, 0.32), transparent 32%),
-    radial-gradient(circle at 20% 85%, rgba(218, 185, 101, 0.4), transparent 30%),
-    #d8cbb1;
-
-  min-height: 100vh;
-  overflow-x: hidden;
+    radial-gradient(circle at 10% 20%, rgba(205, 136, 94, 0.45), transparent 26%),
+    radial-gradient(circle at 80% 20%, rgba(91, 106, 66, 0.5), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(155, 89, 107, 0.35), transparent 30%),
+    #b69b72;
 }
 
 
-/* papíros / régi internet textúra */
+/* enyhe papír-textúra */
 
-body::after {
+body::before {
   content: "";
   position: fixed;
   inset: 0;
+  pointer-events: none;
 
-  background-image:
+  background:
     repeating-linear-gradient(
       0deg,
-      rgba(255,255,255,0.06) 0px,
-      rgba(255,255,255,0.06) 1px,
+      rgba(255,255,255,0.025) 0,
+      rgba(255,255,255,0.025) 1px,
       transparent 1px,
       transparent 4px
     );
 
-  pointer-events: none;
-  z-index: 100;
+  opacity: 0.8;
+}
+
+
+/* felső menü */
+
+.topbar {
+  width: min(700px, 90%);
+  margin: 28px auto 0;
+
+  padding: 15px 30px;
+
+  background: rgba(244, 229, 204, 0.92);
+
+  border-radius: 45% 55% 48% 52% / 45% 44% 56% 55%;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px rgba(53, 38, 23, 0.12);
+}
+
+
+nav a {
+  margin: 0 20px;
+
+  color: #49392d;
+  text-decoration: none;
+
+  font-size: 17px;
+  font-style: italic;
+}
+
+
+nav a.active {
+  border-bottom: 2px solid #b65865;
 }
 
 
 /* HERO */
 
 .hero {
-  width: min(1000px, 88%);
-  margin: 0 auto;
-  padding: 90px 20px 60px;
+  width: min(1040px, 92%);
+  margin: 30px auto 0;
+}
 
-  text-align: center;
+
+.hero-paper {
   position: relative;
+
+  padding: 55px 70px 48px;
+
+  background:
+    linear-gradient(
+      rgba(245, 231, 207, 0.94),
+      rgba(236, 220, 191, 0.94)
+    );
+
+  border-radius:
+    12% 7% 14% 8% /
+    10% 13% 8% 16%;
+
+  box-shadow:
+    0 25px 50px rgba(52, 35, 22, 0.18);
+
+  transform: rotate(-0.7deg);
+
+  overflow: hidden;
 }
 
-.small-note {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: #6d684e;
-  margin-bottom: 25px;
-}
 
-
-h1 {
+.hero-paper h1 {
   margin: 0;
 
-  font-size: clamp(80px, 14vw, 175px);
+  font-size: clamp(85px, 14vw, 170px);
   font-weight: normal;
-  font-style: italic;
 
   line-height: 0.72;
   letter-spacing: -8px;
 
-  color: #6e5745;
-
-  text-shadow:
-    3px 3px 0 rgba(255,255,255,0.25),
-    8px 10px 25px rgba(70, 42, 25, 0.16);
+  color: #53603f;
 }
 
 
-.subtitle {
-  margin: 45px auto 25px;
-  max-width: 500px;
+.hero-paper p {
+  margin-top: 42px;
 
-  font-style: italic;
-  font-size: 14px;
-  line-height: 1.6;
-
-  color: #645548;
-}
-
-
-/* NAV */
-
-nav {
-  margin-top: 30px;
-}
-
-nav a {
-  display: inline-block;
-
-  margin: 6px 10px;
-  padding: 8px 16px;
-
-  color: #544735;
-
-  text-decoration: none;
-  font-size: 14px;
+  font-size: 17px;
   font-style: italic;
 
-  border: 1px solid rgba(83, 66, 48, 0.5);
-  border-radius: 50%;
-}
-
-nav a:nth-child(2) {
-  transform: rotate(-4deg);
-}
-
-nav a:nth-child(3) {
-  transform: rotate(3deg);
-}
-
-nav a:hover {
-  background: rgba(255,255,255,0.25);
+  letter-spacing: 1px;
 }
 
 
-/* MAIN */
+.decor {
+  position: absolute;
 
-main {
-  width: min(760px, 86%);
-  margin: 20px auto 120px;
+  color: rgba(154, 108, 49, 0.7);
 }
 
 
-.decoration {
-  text-align: center;
+.decor-1 {
+  top: 40px;
+  right: 110px;
 
-  letter-spacing: 16px;
-  font-size: 23px;
-
-  margin-bottom: 50px;
-
-  color: #8b744d;
+  font-size: 52px;
 }
 
 
-/* BLOG CARDS */
+.decor-2 {
+  top: 85px;
+  left: 60px;
 
-article {
+  font-size: 48px;
+}
+
+
+.decor-3 {
+  right: 50px;
+  bottom: 32px;
+
+  font-size: 42px;
+}
+
+
+/* posztok */
+
+.posts {
+  width: min(1050px, 92%);
+  margin: 55px auto 120px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+
+/* organikus papír */
+
+.post-card {
   position: relative;
 
-  padding: 55px 55px 50px;
-  margin: 0 0 80px;
+  padding: 22px 22px 32px;
 
   background:
     linear-gradient(
-      rgba(245, 231, 199, 0.88),
-      rgba(239, 218, 185, 0.82)
+      rgba(248, 231, 207, 0.97),
+      rgba(237, 211, 191, 0.96)
     );
 
-  border: 1px solid rgba(88, 63, 44, 0.35);
-
   box-shadow:
-    16px 19px 0 rgba(111, 114, 80, 0.22),
-    0 20px 60px rgba(73, 52, 32, 0.14);
+    0 22px 40px rgba(53, 35, 22, 0.18);
+}
+
+
+.post-one {
+  border-radius:
+    18% 10% 16% 12% /
+    12% 18% 11% 15%;
 
   transform: rotate(-1deg);
 }
 
 
-article.second {
-  transform: rotate(1.2deg);
+.post-two {
+  border-radius:
+    11% 19% 12% 17% /
+    17% 10% 18% 12%;
 
-  background:
-    linear-gradient(
-      rgba(221, 202, 176, 0.90),
-      rgba(214, 189, 175, 0.82)
-    );
+  transform: rotate(1.1deg);
+}
+
+
+/* képek */
+
+.image-frame {
+  overflow: hidden;
+
+  height: 290px;
+
+  border-radius:
+    14% 10% 16% 9% /
+    10% 17% 11% 15%;
+}
+
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* szöveg */
+
+.post-content {
+  padding: 25px 22px 6px;
 }
 
 
 .date {
   font-family: "Courier New", monospace;
-
   font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 
-  color: #7f725f;
+  color: #8d735b;
 }
 
 
-article h2 {
-  max-width: 620px;
+.post-content h2 {
+  margin: 14px 0 18px;
 
-  font-size: clamp(36px, 6vw, 60px);
-  line-height: 0.98;
-
+  font-size: 35px;
   font-weight: normal;
   font-style: italic;
 
-  margin: 20px 0 30px;
-
-  color: #514236;
+  line-height: 1.05;
 }
 
 
-.intro {
-  font-size: 18px;
-  line-height: 1.8;
-
-  max-width: 600px;
+.post-content p {
+  font-size: 17px;
+  line-height: 1.7;
 }
 
 
-.read-more {
+.post-content a {
   display: inline-block;
 
-  margin-top: 20px;
+  margin-top: 12px;
 
-  color: #63573e;
-
-  font-size: 14px;
-  font-style: italic;
-
+  color: #7e4853;
   text-decoration: none;
 
-  border-bottom: 1px solid #63573e;
+  border-bottom: 1px solid #b45f71;
 }
 
 
-.read-more:hover {
-  letter-spacing: 1px;
-}
+/* telefon */
+
+@media (max-width: 800px) {
+
+  .posts {
+    grid-template-columns: 1fr;
+  }
 
 
-/* "ragasztószalag" */
-
-.tape {
-  position: absolute;
-
-  width: 110px;
-  height: 30px;
-
-  top: -16px;
-  left: 50%;
-
-  transform: translateX(-50%) rotate(-3deg);
-
-  background: rgba(181, 166, 112, 0.38);
-}
+  nav a {
+    margin: 0 9px;
+    font-size: 15px;
+  }
 
 
-.tape.pink {
-  background: rgba(170, 112, 126, 0.32);
-}
+  .hero-paper {
+    padding: 42px 34px;
+  }
 
 
-/* ARTICLE STAR */
-
-.article-star {
-  position: absolute;
-
-  right: 25px;
-  bottom: 20px;
-
-  font-size: 70px;
-
-  color: rgba(146, 105, 50, 0.28);
-
-  transform: rotate(18deg);
-}
-
-
-/* LITTLE NOTE */
-
-.tiny-note {
-  width: 70%;
-
-  margin: -30px auto 70px;
-
-  text-align: center;
-
-  font-size: 13px;
-  font-style: italic;
-
-  color: #786e58;
-
-  transform: rotate(-2deg);
-}
-
-
-/* FLOATING SYMBOLS */
-
-.floating {
-  position: absolute;
-  z-index: -1;
-
-  color: rgba(113, 91, 54, 0.35);
-}
-
-
-.star-one {
-  top: 100px;
-  left: 7%;
-
-  font-size: 100px;
-  transform: rotate(20deg);
-}
-
-
-.star-two {
-  top: 480px;
-  right: 8%;
-
-  font-size: 65px;
-  color: rgba(107, 118, 81, 0.35);
-}
-
-
-.flower-one {
-  top: 760px;
-  left: 5%;
-
-  font-size: 90px;
-  color: rgba(142, 79, 112, 0.25);
-}
-
-
-.moon {
-  top: 260px;
-  right: 17%;
-
-  font-size: 80px;
-
-  color: rgba(127, 94, 58, 0.35);
-
-  transform: rotate(-15deg);
-}
-
-
-/* PHONE */
-
-@media (max-width: 650px) {
-
-  h1 {
+  .hero-paper h1 {
     letter-spacing: -4px;
   }
 
-  article {
-    padding: 38px 28px;
-  }
 
-  .floating {
-    opacity: 0.5;
+  .image-frame {
+    height: 240px;
   }
 
 }
