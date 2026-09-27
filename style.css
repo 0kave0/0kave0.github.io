@@ -14,8 +14,7 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   overflow-x: hidden;
 
-  background-image: url("https://raw.githubusercontent.com/Okave0/Okave0.github.io/main/images/pink-start2.png");
-  background-size: cover;
+background-image: url("images/pink-start2.jpg");  background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
