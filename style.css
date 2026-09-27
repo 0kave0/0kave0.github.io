@@ -6,529 +6,539 @@ html,
 body {
   margin: 0;
   padding: 0;
+
   min-height: 100%;
 }
 
 body {
-  font-family: Georgia, "Times New Roman", serif;
-  color: #4b392f;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  color: #49382f;
+
   overflow-x: hidden;
 }
 
-main {
-  background: transparent;
-}
 
+/* =================================
+   HEADER
+================================= */
 
-/* =========================
-   TOP NAV
-========================= */
-
-.topbar {
-  width: fit-content;
-  margin: 18px auto 0;
-
-  padding: 10px 28px;
-
-  background: rgba(248, 235, 215, 0.78);
-
-  backdrop-filter: blur(6px);
-
-  border-radius: 999px;
-
-  position: relative;
-  z-index: 20;
-}
-
-nav a {
-  display: inline-block;
-
-  margin: 0 16px;
-
-  color: #4c3a30;
-  text-decoration: none;
-
-  font-size: 16px;
-  font-style: italic;
-
-  transition: 0.2s ease;
-}
-
-nav a:hover {
-  transform: rotate(-2deg) translateY(-1px);
-}
-
-nav a.active {
-  border-bottom: 2px solid #b65e72;
-}
-
-
-/* =========================
-   INTRO
-========================= */
-
-.intro {
+.site-header {
   width: min(1100px, 90%);
-  margin: 52px auto 15px;
 
-  position: relative;
+  margin: 0 auto;
 
-  min-height: 265px;
+  padding:
+    48px
+    0
+    28px;
+
+  text-align: center;
 }
 
 
-/* cím doboz nélkül */
-
-.title-wrap {
-  display: inline-block;
-
-  position: relative;
-  z-index: 3;
-}
-
-.title-wrap h1 {
+.site-header h1 {
   margin: 0;
 
-  font-size: clamp(58px, 8vw, 108px);
+  font-size:
+    clamp(
+      58px,
+      7vw,
+      96px
+    );
 
   font-weight: normal;
 
-  line-height: 0.9;
+  line-height: 0.95;
+
   letter-spacing: -4px;
 
-  color: #53603f;
+  color: #536143;
 
   text-shadow:
-    0 2px 0 rgba(255,255,255,0.25),
-    0 10px 24px rgba(72, 44, 31, 0.13);
+    0 3px 0 rgba(255, 255, 255, 0.18),
+    0 9px 28px rgba(88, 51, 32, 0.12);
 }
 
 
-/* külön kis papír a tagline-nak */
+/* =================================
+   NAV
+================================= */
 
-.tagline-paper {
-  width: fit-content;
+nav {
+  margin-top: 25px;
 
-  margin-top: 26px;
-  margin-left: 40px;
+  display: flex;
 
-  padding: 12px 20px;
+  justify-content: center;
 
-  background: rgba(247, 233, 213, 0.82);
+  gap: 38px;
+}
 
-  backdrop-filter: blur(5px);
 
-  border-radius:
-    28px 40px 24px 36px /
-    32px 24px 38px 26px;
+nav a {
+  position: relative;
 
-  transform: rotate(-1.5deg);
+  color: #513c31;
 
-  font-size: 15px;
+  text-decoration: none;
+
+  font-size: 16px;
+
   font-style: italic;
-  letter-spacing: 0.5px;
 
-  box-shadow:
-    0 14px 28px rgba(64, 43, 31, 0.08);
+  padding-bottom: 4px;
 }
 
 
-/* kis cetli jobb oldalon */
+nav a::after {
+  content: "";
 
-.side-note {
   position: absolute;
 
-  right: 30px;
-  top: 18px;
+  left: 50%;
+  bottom: 0;
 
-  width: 200px;
+  width: 0;
+  height: 1px;
 
-  padding: 22px 18px;
+  background: #a9576d;
 
-  background: rgba(235, 214, 197, 0.70);
+  transform: translateX(-50%);
 
-  backdrop-filter: blur(5px);
-
-  border-radius:
-    42px 20px 56px 24px /
-    22px 52px 30px 58px;
-
-  transform: rotate(4deg);
-
-  text-align: center;
-
-  font-size: 13px;
-  line-height: 1.65;
-  font-style: italic;
-
-  box-shadow:
-    0 15px 30px rgba(59, 41, 28, 0.09);
+  transition:
+    width
+    0.25s
+    ease;
 }
 
-.side-note span {
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+
+/* =================================
+   HOME GRID
+================================= */
+
+.home-grid {
+  width: min(1120px, 90%);
+
+  margin:
+    35px
+    auto
+    80px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 58px;
+
+  align-items: start;
+}
+
+
+/* =================================
+   BIG CARDS
+================================= */
+
+.home-card {
+  position: relative;
+
   display: block;
 
-  margin-bottom: 6px;
+  height: 540px;
 
-  font-size: 30px;
-
-  color: #a26f4a;
-}
-
-
-/* =========================
-   SCRAPBOOK AREA
-========================= */
-
-.scrapbook {
-  width: min(1180px, 94%);
-  margin: 25px auto 150px;
-
-  min-height: 980px;
-
-  position: relative;
-}
-
-
-/* =========================
-   POSTS BASE
-========================= */
-
-.post {
-  position: absolute;
-}
-
-
-/* első poszt */
-
-.post-one {
-  width: 58%;
-
-  left: 0;
-  top: 35px;
-}
-
-
-/* második poszt */
-
-.post-two {
-  width: 43%;
-
-  right: 0;
-  top: 265px;
-}
-
-
-/* =========================
-   PHOTOS
-========================= */
-
-.photo {
   overflow: hidden;
 
-  box-shadow:
-    0 18px 40px rgba(49, 32, 22, 0.14);
+  text-decoration: none;
 
-  position: relative;
-  z-index: 1;
+  color: inherit;
+
+  box-shadow:
+    0 22px 50px
+    rgba(71, 42, 27, 0.16);
+
+  transition:
+    transform
+    0.35s
+    ease,
+    box-shadow
+    0.35s
+    ease;
 }
 
-.photo img {
+
+/* külön forma a két blokknak */
+
+.journal-card {
+  border-radius:
+    82px
+    42px
+    88px
+    56px /
+    68px
+    86px
+    54px
+    92px;
+}
+
+
+.maseniszta-card {
+  border-radius:
+    48px
+    92px
+    58px
+    84px /
+    90px
+    56px
+    96px
+    62px;
+
+  margin-top: 55px;
+}
+
+
+.home-card:hover {
+  transform:
+    translateY(-7px);
+
+  box-shadow:
+    0 30px 65px
+    rgba(71, 42, 27, 0.21);
+}
+
+
+/* =================================
+   CARD IMAGES
+================================= */
+
+.home-card img {
   width: 100%;
   height: 100%;
 
   object-fit: cover;
 
   display: block;
+
+  transition:
+    transform
+    0.6s
+    ease;
 }
 
 
-/* első kép nagyobb és organikus */
-
-.photo-one {
-  height: 420px;
-
-  border-radius:
-    85px 28px 105px 38px /
-    45px 100px 36px 82px;
-
-  transform: rotate(-1deg);
+.home-card:hover img {
+  transform:
+    scale(1.035);
 }
 
 
-/* második kisebb */
+/* =================================
+   OVERLAY
+================================= */
 
-.photo-two {
-  height: 280px;
+.home-card::before {
+  content: "";
 
-  border-radius:
-    30px 95px 44px 78px /
-    80px 34px 92px 40px;
+  position: absolute;
 
-  transform: rotate(1.5deg);
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(41, 29, 22, 0.58) 0%,
+      rgba(41, 29, 22, 0.06) 58%,
+      rgba(41, 29, 22, 0) 100%
+    );
 }
 
 
-/* =========================
-   PAPER TEXT BLOCKS
-========================= */
+/* =================================
+   CARD TEXT
+================================= */
 
-.paper {
-  position: relative;
+.card-overlay {
+  position: absolute;
+
+  left: 34px;
+  right: 34px;
+  bottom: 32px;
 
   z-index: 3;
 
-  background: rgba(248, 232, 211, 0.87);
+  padding:
+    25px
+    27px
+    24px;
 
-  backdrop-filter: blur(5px);
+  background:
+    rgba(248, 231, 211, 0.86);
+
+  backdrop-filter:
+    blur(8px);
+
+  -webkit-backdrop-filter:
+    blur(8px);
 
   box-shadow:
-    0 16px 34px rgba(61, 39, 26, 0.11);
+    0 12px 35px
+    rgba(62, 39, 25, 0.12);
 }
 
 
-/* első szövegcetli */
-
-.paper-one {
-  width: 76%;
-
-  margin: -70px 0 0 90px;
-
-  padding: 30px 34px;
-
+.journal-card .card-overlay {
   border-radius:
-    48px 24px 70px 32px /
-    34px 66px 28px 74px;
-
-  transform: rotate(1deg);
+    42px
+    28px
+    52px
+    31px /
+    34px
+    50px
+    30px
+    58px;
 }
 
 
-/* második szövegcetli */
-
-.paper-two {
-  width: 92%;
-
-  margin: -38px 0 0 12px;
-
-  padding: 26px 28px;
-
-  background: rgba(244, 217, 208, 0.88);
-
+.maseniszta-card .card-overlay {
   border-radius:
-    36px 72px 32px 60px /
-    62px 30px 76px 40px;
+    30px
+    50px
+    35px
+    46px /
+    52px
+    30px
+    58px
+    34px;
 
-  transform: rotate(-1deg);
+  background:
+    rgba(239, 207, 198, 0.86);
 }
 
 
-/* =========================
-   TYPOGRAPHY
-========================= */
+.eyebrow {
+  display: block;
 
-.date {
-  font-family: "Courier New", monospace;
+  margin-bottom: 9px;
+
+  font-family:
+    "Courier New",
+    monospace;
 
   font-size: 11px;
 
-  color: #8d7660;
+  letter-spacing: 1.4px;
 
-  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: #89705d;
 }
 
-.paper h2 {
-  margin: 12px 0 16px;
+
+.card-overlay h2 {
+  margin:
+    0
+    0
+    17px;
+
+  font-size: 31px;
 
   font-weight: normal;
+
   font-style: italic;
 
   line-height: 1.05;
+
+  color: #49382f;
 }
 
-.paper-one h2 {
-  font-size: 36px;
+
+.maseniszta-card
+.card-overlay h2 {
+  font-size: 42px;
 }
 
-.paper-two h2 {
-  font-size: 28px;
-}
 
-.paper p {
-  font-size: 15px;
-  line-height: 1.75;
-}
-
-.paper a {
+.card-link {
   display: inline-block;
 
-  margin-top: 9px;
+  font-size: 14px;
 
-  color: #8c5060;
-
-  text-decoration: none;
-
-  border-bottom: 1px solid rgba(178, 90, 111, 0.65);
-}
-
-
-/* =========================
-   DECOR
-========================= */
-
-.tiny-decor {
-  position: absolute;
-
-  z-index: 5;
-
-  pointer-events: none;
-}
-
-.star-a {
-  right: 30px;
-  top: 20px;
-
-  font-size: 52px;
-
-  color: rgba(176, 118, 55, 0.42);
-
-  transform: rotate(13deg);
-}
-
-.flower-a {
-  left: -20px;
-  bottom: 100px;
-
-  font-size: 56px;
-
-  color: rgba(111, 125, 77, 0.33);
-
-  transform: rotate(-10deg);
-}
-
-.moon-a {
-  right: -25px;
-  bottom: 70px;
-
-  font-size: 70px;
-
-  color: rgba(101, 78, 101, 0.28);
-
-  transform: rotate(12deg);
-}
-
-
-/* =========================
-   FLOATING NOTES
-========================= */
-
-.floating-note {
-  position: absolute;
-
-  background: rgba(248, 233, 213, 0.68);
-
-  backdrop-filter: blur(5px);
-
-  box-shadow:
-    0 12px 26px rgba(53, 38, 26, 0.08);
-
-  font-size: 13px;
   font-style: italic;
-  line-height: 1.6;
 
-  color: #6e5548;
+  color: #8d4e61;
+
+  border-bottom:
+    1px solid
+    rgba(172, 84, 106, 0.65);
 }
 
-.note-one {
-  left: 42%;
-  top: 610px;
 
-  padding: 16px 20px;
+/* =================================
+   SMALL DECORS
+================================= */
 
-  border-radius:
-    24px 40px 22px 44px /
-    34px 22px 46px 24px;
+.corner-star,
+.corner-moon {
+  position: absolute;
 
-  transform: rotate(-4deg);
+  z-index: 3;
+
+  color:
+    rgba(238, 214, 159, 0.85);
+
+  text-shadow:
+    0 3px 15px
+    rgba(76, 46, 28, 0.25);
 }
 
-.note-two {
-  right: 10%;
-  top: 760px;
 
-  padding: 11px 18px;
+.corner-star {
+  top: 26px;
+  right: 30px;
+
+  font-size: 48px;
+}
+
+
+.corner-moon {
+  top: 25px;
+  left: 30px;
+
+  font-size: 54px;
+}
+
+
+/* =================================
+   FOOTER TEXT
+================================= */
+
+footer {
+  width: min(800px, 88%);
+
+  margin:
+    20px
+    auto
+    70px;
+
+  text-align: center;
+}
+
+
+footer span {
+  display: inline-block;
+
+  padding:
+    11px
+    20px;
+
+  background:
+    rgba(248, 233, 214, 0.66);
+
+  backdrop-filter:
+    blur(6px);
+
+  -webkit-backdrop-filter:
+    blur(6px);
 
   border-radius: 999px;
 
-  transform: rotate(3deg);
+  font-size: 13px;
+
+  font-style: italic;
+
+  color: #6e5648;
 }
 
 
-/* =========================
+/* =================================
    MOBILE
-========================= */
+================================= */
 
 @media (max-width: 800px) {
 
-  .intro {
-    min-height: auto;
+  .site-header {
+    padding-top: 38px;
   }
 
-  .title-wrap h1 {
-    font-size: clamp(52px, 15vw, 76px);
+
+  .site-header h1 {
+    font-size:
+      clamp(
+        52px,
+        14vw,
+        74px
+      );
+
     letter-spacing: -3px;
   }
 
-  .side-note {
-    position: static;
 
-    width: 75%;
-
-    margin: 24px auto 0;
+  nav {
+    gap: 18px;
   }
 
-  .scrapbook {
-    min-height: auto;
-  }
-
-  .post {
-    position: relative;
-
-    width: 100%;
-
-    left: auto;
-    right: auto;
-    top: auto;
-
-    margin-bottom: 70px;
-  }
-
-  .photo-one,
-  .photo-two {
-    height: 260px;
-  }
-
-  .paper-one,
-  .paper-two {
-    width: 90%;
-
-    margin: -35px auto 0;
-  }
-
-  .floating-note {
-    display: none;
-  }
-
-  .star-a,
-  .flower-a,
-  .moon-a {
-    display: none;
-  }
 
   nav a {
-    margin: 0 8px;
-
     font-size: 14px;
+  }
+
+
+  .home-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    margin-top: 25px;
+  }
+
+
+  .home-card {
+    height: 450px;
+  }
+
+
+  .maseniszta-card {
+    margin-top: 0;
+  }
+
+
+  .journal-card,
+  .maseniszta-card {
+    border-radius: 42px;
+  }
+
+
+  .card-overlay {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    padding:
+      22px
+      22px;
+  }
+
+
+  .card-overlay h2 {
+    font-size: 27px;
+  }
+
+
+  .maseniszta-card
+  .card-overlay h2 {
+    font-size: 36px;
   }
 
 }
