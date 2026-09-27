@@ -11,14 +11,16 @@ body {
   overflow-x: hidden;
 
   background:
-    linear-gradient(rgba(244, 228, 201, 0.55), rgba(244, 228, 201, 0.55)),
+    linear-gradient(rgba(244, 228, 201, 0.45), rgba(244, 228, 201, 0.45)),
     url("images/botanical-collage.jpg");
+
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-/* lágy rétegek a háttérre */
+/* háttérrétegek */
+
 body::before {
   content: "";
   position: fixed;
@@ -29,6 +31,7 @@ body::before {
   background:
     url("images/dreamy-stars.jpg") center/cover no-repeat,
     url("images/pastel-swirls.jpg") center/cover no-repeat;
+
   opacity: 0.22;
   mix-blend-mode: soft-light;
 }
@@ -42,7 +45,8 @@ body::after {
 
   background:
     url("images/pink-stars.jpg") center/cover no-repeat;
-  opacity: 0.16;
+
+  opacity: 0.14;
   mix-blend-mode: screen;
 }
 
@@ -54,26 +58,32 @@ body::after {
 }
 
 
-/* felső menü */
+/* NAV */
+
 .topbar {
-  width: min(700px, 90%);
-  margin: 28px auto 0;
-  padding: 15px 30px;
-  background: rgba(247, 236, 219, 0.82);
-  backdrop-filter: blur(4px);
+  width: min(650px, 88%);
+  margin: 22px auto 0;
+
+  padding: 13px 26px;
+
+  background: rgba(247, 236, 219, 0.84);
+  backdrop-filter: blur(5px);
 
   border-radius: 999px;
+
   text-align: center;
 
   box-shadow:
-    0 10px 30px rgba(53, 38, 23, 0.10);
+    0 10px 30px rgba(53, 38, 23, 0.08);
 }
 
 nav a {
-  margin: 0 20px;
+  margin: 0 18px;
+
   color: #49392d;
   text-decoration: none;
-  font-size: 17px;
+
+  font-size: 16px;
   font-style: italic;
 }
 
@@ -82,72 +92,102 @@ nav a.active {
 }
 
 
-/* hero */
+/* HERO */
+
 .hero {
-  width: min(1100px, 92%);
-  margin: 28px auto 0;
+  width: min(1000px, 90%);
+  margin: 26px auto 0;
 }
 
 .hero-paper {
   position: relative;
-  padding: 58px 72px 52px;
+
+  padding: 40px 55px 38px;
+
   background:
-    linear-gradient(rgba(248, 239, 225, 0.92), rgba(241, 226, 198, 0.90));
+    linear-gradient(
+      rgba(248, 239, 225, 0.90),
+      rgba(241, 226, 198, 0.88)
+    );
+
   backdrop-filter: blur(3px);
 
-  border-radius: 60px;
+  border-radius:
+    55px 85px 60px 75px /
+    60px 50px 85px 60px;
+
   box-shadow:
-    0 25px 50px rgba(52, 35, 22, 0.14);
+    0 22px 45px rgba(52, 35, 22, 0.12);
 
   overflow: hidden;
 }
 
-/* finom textúrák a hero-ban */
 .hero-paper::before {
   content: "";
   position: absolute;
   inset: 0;
+
   background:
     url("images/blur-stars.jpg") center/cover no-repeat;
-  opacity: 0.15;
+
+  opacity: 0.11;
   mix-blend-mode: soft-light;
+
   pointer-events: none;
 }
 
 .hero-paper::after {
   content: "";
   position: absolute;
-  right: -40px;
-  top: -30px;
-  width: 280px;
-  height: 280px;
+
+  right: -35px;
+  top: -45px;
+
+  width: 240px;
+  height: 240px;
+
   background:
     url("images/dreamy-stars.jpg") center/cover no-repeat;
-  opacity: 0.24;
+
+  opacity: 0.20;
+
   border-radius: 50%;
-  filter: blur(1px);
+
   pointer-events: none;
 }
+
+
+/* kisebb cím */
 
 .hero-paper h1 {
   position: relative;
   z-index: 2;
+
   margin: 0;
-  font-size: clamp(85px, 14vw, 170px);
+
+  font-size: clamp(58px, 7vw, 100px);
   font-weight: normal;
-  line-height: 0.72;
-  letter-spacing: -8px;
+
+  line-height: 0.86;
+  letter-spacing: -4px;
+
   color: #53603f;
 }
 
 .hero-paper p {
   position: relative;
   z-index: 2;
-  margin-top: 42px;
-  font-size: 17px;
+
+  margin-top: 30px;
+
+  font-size: 16px;
   font-style: italic;
-  letter-spacing: 1px;
+
+  letter-spacing: 0.7px;
 }
+
+
+/* dekorok */
 
 .decor {
   position: absolute;
@@ -156,181 +196,287 @@ nav a.active {
 }
 
 .decor-1 {
-  top: 40px;
-  right: 110px;
-  font-size: 52px;
-}
-
-.decor-2 {
-  top: 85px;
-  left: 60px;
-  font-size: 48px;
-}
-
-.decor-3 {
-  right: 50px;
-  bottom: 32px;
+  top: 32px;
+  right: 90px;
   font-size: 42px;
 }
 
-
-/* postok */
-.posts {
-  width: min(1050px, 92%);
-  margin: 55px auto 120px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px;
+.decor-2 {
+  top: 62px;
+  left: 45px;
+  font-size: 38px;
 }
+
+.decor-3 {
+  right: 42px;
+  bottom: 25px;
+  font-size: 35px;
+}
+
+
+/* POSZTOK */
+
+.posts {
+  width: min(1100px, 90%);
+
+  margin: 70px auto 140px;
+
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+
+  gap: 48px;
+
+  align-items: start;
+}
+
+
+/* alap */
 
 .post-card {
   position: relative;
-  padding: 22px 22px 32px;
+
+  padding: 18px 18px 30px;
+
   background:
-    linear-gradient(rgba(249, 237, 219, 0.94), rgba(242, 223, 204, 0.92));
+    linear-gradient(
+      rgba(249, 237, 219, 0.90),
+      rgba(242, 223, 204, 0.88)
+    );
+
   backdrop-filter: blur(3px);
 
   box-shadow:
-    0 22px 40px rgba(53, 35, 22, 0.14);
+    0 20px 38px rgba(53, 35, 22, 0.12);
+
+  overflow: hidden;
 }
 
-.post-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.10;
-  pointer-events: none;
-  border-radius: inherit;
-  background:
-    url("images/pastel-swirls.jpg") center/cover no-repeat;
-  mix-blend-mode: multiply;
-}
+
+/* eltérő formák */
 
 .post-one {
-  border-radius: 60px 90px 70px 85px / 65px 80px 60px 95px;
+  border-radius:
+    75px 40px 85px 55px /
+    55px 90px 50px 80px;
+
+  transform: rotate(-0.8deg);
 }
 
 .post-two {
-  border-radius: 90px 55px 95px 60px / 60px 90px 58px 85px;
+  border-radius:
+    45px 85px 60px 95px /
+    75px 50px 90px 55px;
+
+  transform: rotate(1deg);
+
+  margin-top: 75px;
+}
+
+
+/* finom textúra a kártyákban */
+
+.post-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    url("images/pastel-swirls.jpg") center/cover no-repeat;
+
+  opacity: 0.08;
+
+  mix-blend-mode: multiply;
+
+  pointer-events: none;
 }
 
 
 /* képek */
+
 .image-frame {
   overflow: hidden;
-  height: 290px;
-  border-radius: 40px;
+
   position: relative;
+}
+
+.post-one .image-frame {
+  height: 320px;
+
+  border-radius:
+    55px 30px 65px 35px /
+    35px 60px 40px 70px;
+}
+
+.post-two .image-frame {
+  height: 250px;
+
+  border-radius:
+    35px 70px 40px 60px /
+    65px 35px 75px 45px;
 }
 
 .image-frame::after {
   content: "";
+
   position: absolute;
   inset: 0;
-  background: url("images/dreamy-stars.jpg") center/cover no-repeat;
-  opacity: 0.12;
+
+  background:
+    url("images/dreamy-stars.jpg") center/cover no-repeat;
+
+  opacity: 0.09;
   mix-blend-mode: screen;
+
   pointer-events: none;
 }
 
 .image-frame img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   display: block;
 }
 
+
 /* szöveg */
+
 .post-content {
   position: relative;
   z-index: 2;
-  padding: 25px 22px 6px;
+
+  padding: 24px 20px 5px;
 }
 
 .date {
   font-family: "Courier New", monospace;
+
   font-size: 12px;
+
   color: #8d735b;
+
+  letter-spacing: 0.8px;
 }
 
 .post-content h2 {
   margin: 14px 0 18px;
-  font-size: 35px;
+
+  font-size: 34px;
   font-weight: normal;
   font-style: italic;
+
   line-height: 1.05;
 }
 
+.post-two .post-content h2 {
+  font-size: 31px;
+}
+
 .post-content p {
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.7;
 }
 
 .post-content a {
   display: inline-block;
+
   margin-top: 12px;
+
   color: #7e4853;
+
   text-decoration: none;
+
   border-bottom: 1px solid #b45f71;
 }
 
 
-/* extra lebegő kis dekor rétegek */
+/* háttér dekor foltok */
+
 .posts::before {
   content: "";
+
   position: absolute;
-  left: -40px;
-  bottom: 40px;
-  width: 220px;
-  height: 220px;
-  background: url("images/blur-stars.jpg") center/cover no-repeat;
-  opacity: 0.18;
+
+  left: -70px;
+  bottom: 80px;
+
+  width: 240px;
+  height: 240px;
+
+  background:
+    url("images/blur-stars.jpg") center/cover no-repeat;
+
+  opacity: 0.16;
+
   border-radius: 50%;
-  filter: blur(1px);
+
+  filter: blur(2px);
+
   pointer-events: none;
 }
 
 .posts::after {
   content: "";
+
   position: absolute;
-  right: -30px;
-  top: -20px;
-  width: 180px;
-  height: 180px;
-  background: url("images/pink-stars.jpg") center/cover no-repeat;
-  opacity: 0.16;
+
+  right: -55px;
+  top: 120px;
+
+  width: 190px;
+  height: 190px;
+
+  background:
+    url("images/pink-stars.jpg") center/cover no-repeat;
+
+  opacity: 0.14;
+
   border-radius: 50%;
+
   pointer-events: none;
 }
 
 
-/* mobil */
+/* MOBILE */
+
 @media (max-width: 800px) {
+
   .posts {
     grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .post-two {
+    margin-top: 0;
   }
 
   nav a {
-    margin: 0 9px;
+    margin: 0 8px;
     font-size: 15px;
   }
 
   .hero-paper {
-    padding: 42px 34px;
-    border-radius: 35px;
+    padding: 36px 30px;
+
+    border-radius: 40px;
   }
 
   .hero-paper h1 {
-    letter-spacing: -4px;
+    font-size: clamp(54px, 15vw, 78px);
+    letter-spacing: -3px;
   }
 
-  .image-frame {
+  .post-one .image-frame,
+  .post-two .image-frame {
     height: 240px;
-    border-radius: 28px;
   }
 
   .post-one,
   .post-two {
-    border-radius: 35px;
+    border-radius: 40px;
   }
+
 }
