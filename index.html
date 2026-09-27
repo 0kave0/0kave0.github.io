@@ -3,12 +3,20 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Online Clutter</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css?v=20"
+  >
 </head>
+
 
 <body
   style="
@@ -20,104 +28,123 @@
   "
 >
 
-  <header class="topbar">
+  <header class="site-header">
+
+    <h1>
+      Online Clutter
+    </h1>
+
     <nav>
-      <a class="active" href="/">journal</a>
-      <a href="/maseniszta/">maseniszta</a>
-      <a href="#archive">archive</a>
+
+      <a
+        class="active"
+        href="/"
+      >
+        journal
+      </a>
+
+      <a
+        href="/maseniszta/"
+      >
+        maseniszta
+      </a>
+
+      <a
+        href="#archive"
+      >
+        archive
+      </a>
+
     </nav>
+
   </header>
 
-  <main>
 
-    <section class="intro">
+  <main class="home-grid">
 
-      <div class="title-wrap">
-        <h1>Online Clutter</h1>
+
+    <!-- JOURNAL -->
+
+    <a
+      class="home-card journal-card"
+      href="#"
+    >
+
+      <img
+        src="images/blur-stars.jpg"
+        alt=""
+      >
+
+      <div class="card-overlay">
+
+        <span class="eyebrow">
+          legújabb cikk
+        </span>
+
+        <h2>
+          Incelektől a new wave magyar popkultúráig
+        </h2>
+
+        <span class="card-link">
+          olvasás →
+        </span>
+
       </div>
 
-      <div class="tagline-paper">
-        notes / culture / internet / things i keep thinking about
+      <span class="corner-star">
+        ✦
+      </span>
+
+    </a>
+
+
+
+    <!-- MASENISZTA -->
+
+    <a
+      class="home-card maseniszta-card"
+      href="/maseniszta/"
+    >
+
+      <img
+        src="images/dark-stars.jpg"
+        alt=""
+      >
+
+      <div class="card-overlay">
+
+        <span class="eyebrow">
+          kreatív projekt
+        </span>
+
+        <h2>
+          Maseniszta
+        </h2>
+
+        <span class="card-link">
+          belépés →
+        </span>
+
       </div>
 
-      <div class="side-note">
-        <span>✦</span>
-        strange little thoughts<br>
-        collected online
-      </div>
+      <span class="corner-moon">
+        ☾
+      </span>
 
-    </section>
+    </a>
 
-
-    <section class="scrapbook">
-
-      <article class="post post-one">
-
-        <div class="photo photo-one">
-          <img src="images/blur-stars.jpg" alt="">
-        </div>
-
-        <div class="paper paper-one">
-          <span class="date">Sep 24, 2026</span>
-
-          <h2>
-            Incelektől a new wave magyar popkultúráig
-          </h2>
-
-          <p>
-            Ide kerülhet majd a bejegyzés rövid bevezetője.
-            Internet, kultúra, társadalom és minden más,
-            ami túl sokáig marad a fejemben.
-          </p>
-
-          <a href="#">Read more →</a>
-        </div>
-
-        <div class="tiny-decor star-a">✧</div>
-        <div class="tiny-decor flower-a">✿</div>
-
-      </article>
-
-
-      <article class="post post-two">
-
-        <div class="photo photo-two">
-          <img src="images/dark-stars.jpg" alt="">
-        </div>
-
-        <div class="paper paper-two">
-          <span class="date">Sep 12, 2026</span>
-
-          <h2>
-            On Digital Gardens and Softer Spaces
-          </h2>
-
-          <p>
-            Gondolatok arról, hogyan lehet az internet kevésbé steril,
-            személyesebb és kicsit szebb hely.
-          </p>
-
-          <a href="#">Read more →</a>
-        </div>
-
-        <div class="tiny-decor moon-a">☾</div>
-
-      </article>
-
-
-      <div class="floating-note note-one">
-        internet scraps<br>
-        soft chaos<br>
-        strange obsessions
-      </div>
-
-      <div class="floating-note note-two">
-        ✦ things i saved instead of sleeping ✦
-      </div>
-
-    </section>
 
   </main>
+
+
+  <footer>
+
+    <span>
+      notes / culture / internet / things i keep thinking about
+    </span>
+
+  </footer>
+
 
 </body>
 
