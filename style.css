@@ -1,82 +1,95 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f7f2ec;
-  color: #2d2d2d;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #c7c7bf;
+  color: #1d1d1b;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 8%;
-  background: white;
+  background: #353733;
+  color: #e8e8df;
+  padding: 28px 7%;
+  border-bottom: 6px solid #6f7658;
 }
 
-.logo {
-  font-size: 26px;
-  font-weight: bold;
+header h1 {
+  margin: 0;
+  font-size: 42px;
+  text-transform: uppercase;
+  letter-spacing: -2px;
 }
 
 nav {
-  display: flex;
-  gap: 25px;
+  margin-top: 15px;
 }
 
 nav a {
+  color: #d9dfc8;
   text-decoration: none;
-  color: #2d2d2d;
+  margin-right: 25px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.hero {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px;
-}
-
-.hero h1 {
-  font-size: 70px;
-  margin: 0;
-}
-
-.hero p {
-  font-size: 20px;
-  max-width: 600px;
-  line-height: 1.6;
-}
-
-.gomb {
-  margin-top: 20px;
-  padding: 14px 28px;
-  background: #2d2d2d;
+nav a:hover {
   color: white;
-  text-decoration: none;
-  border-radius: 30px;
+  text-decoration: underline;
 }
 
-.szekcio {
-  padding: 80px 8%;
+main {
+  width: min(900px, 88%);
+  margin: 60px auto;
 }
 
-.szekcio h2 {
-  font-size: 40px;
-  text-align: center;
+article {
+  background: #deded5;
+  border: 2px solid #2c2d29;
+  box-shadow: 10px 10px 0 #777b68;
+  margin-bottom: 50px;
+  padding: 35px;
 }
 
-.kartya-container {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  margin-top: 40px;
+article h2 {
+  font-size: 34px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
-.kartya {
-  background: white;
-  padding: 30px;
-  width: 250px;
-  border-radius: 15px;
+article p {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.datum {
+  font-family: monospace;
+  font-size: 13px;
+  color: #55594a;
+  text-transform: uppercase;
+}
+
+.tag {
+  display: inline-block;
+  background: #6f7658;
+  color: white;
+  padding: 5px 10px;
+  margin-top: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.noveny-sav {
+  height: 18px;
+  background: repeating-linear-gradient(
+    90deg,
+    #596348 0,
+    #596348 20px,
+    #70795b 20px,
+    #70795b 40px
+  );
 }
