@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    A manoszféra lenyomatai a magyar popkultúrában — Online Clutter
+  </title>
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: #49382f;
+
+      line-height: 1.8;
+
+      overflow-x: hidden;
+    }
+
+
+    /* =========================
+       TOP NAV
+    ========================= */
+
+    .topbar {
+      width: min(700px, 90%);
+
+      margin: 20px auto 0;
+
+      padding: 11px 26px;
+
+      background:
+        rgba(248, 234, 214, 0.82);
+
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
+      border-radius: 999px;
+
+      text-align: center;
+
+      box-shadow:
+        0 10px 30px
+        rgba(68, 43, 27, 0.08);
+    }
+
+
+    .topbar nav {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 30px;
+    }
+
+
+    .topbar a {
+      color: #503d32;
+
+      text-decoration: none;
+
+      font-size: 15px;
+
+      font-style: italic;
+    }
+
+
+    .topbar a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================
+       ARTICLE WRAPPER
+    ========================= */
+
+    .article-wrap {
+      width: min(980px, 90%);
+
+      margin:
+        55px
+        auto
+        100px;
+    }
+
+
+    /* =========================
+       ARTICLE HEADER
+    ========================= */
+
+    .article-header {
+      text-align: center;
+
+      margin-bottom: 45px;
+    }
+
+
+    .back-link {
+      display: inline-block;
+
+      margin-bottom: 25px;
+
+      padding:
+        8px
+        16px;
+
+      background:
+        rgba(248, 232, 211, 0.72);
+
+      border-radius: 999px;
+
+      color: #7a5260;
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      font-style: italic;
+
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+
+    .article-header h1 {
+      max-width: 850px;
+
+      margin:
+        0
+        auto;
+
+      font-size:
+        clamp(
+          44px,
+          6vw,
+          76px
+        );
+
+      font-weight: normal;
+
+      line-height: 1.02;
+
+      letter-spacing: -2px;
+
+      color: #536143;
+
+      text-shadow:
+        0 3px 0
+        rgba(255,255,255,0.18),
+        0 10px 30px
+        rgba(82,48,30,0.12);
+    }
+
+
+    .article-meta {
+      margin-top: 22px;
+
+      font-family:
+        "Courier New",
+        monospace;
+
+      font-size: 12px;
+
+      letter-spacing: 1px;
+
+      color: #7f6757;
+    }
+
+
+    .little-divider {
+      margin:
+        30px
+        auto
+        0;
+
+      color:
+        rgba(145, 99, 54, 0.75);
+
+      font-size: 22px;
+
+      letter-spacing: 12px;
+    }
+
+
+    /* =========================
+       TABLE OF CONTENTS
+    ========================= */
+
+    .contents {
+      max-width: 780px;
+
+      margin:
+        0
+        auto
+        38px;
+
+      padding:
+        22px
+        28px;
+
+      background:
+        rgba(247, 231, 211, 0.72);
+
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+
+      border-radius:
+        40px 58px 38px 52px;
+
+      box-shadow:
+        0 14px 35px
+        rgba(60, 38, 25, 0.08);
+    }
+
+
+    .contents-title {
+      margin-bottom: 13px;
+
+      font-size: 13px;
+
+      font-family:
+        "Courier New",
+        monospace;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      color: #8b705e;
+    }
+
+
+    .contents a {
+      display: inline-block;
+
+      margin:
+        5px
+        13px
+        5px
+        0;
+
+      color: #775060;
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      font-style: italic;
+    }
+
+
+    .contents a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================
+       PAPER
+    ========================= */
+
+    article {
+      padding:
+        55px
+        70px
+        70px;
+
+      background:
+        rgba(249, 237, 219, 0.89);
+
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
+      border-radius:
+        60px 85px 58px 80px /
+        75px 52px 88px 58px;
+
+      box-shadow:
+        0 25px 60px
+        rgba(60, 38, 25, 0.14);
+    }
+
+
+    /* =========================
+       TEXT
+    ========================= */
+
+    article section {
+      margin:
+        0
+        0
+        65px;
+    }
+
+
+    article section:last-child {
+      margin-bottom: 0;
+    }
+
+
+    article h2 {
+      margin:
+        0
+        0
+        26px;
+
+      font-size:
+        clamp(
+          31px,
+          4vw,
+          46px
+        );
+
+      font-weight: normal;
+
+      font-style: italic;
+
+      line-height: 1.05;
+
+      color: #596348;
+    }
+
+
+    article h3 {
+      margin:
+        45px
+        0
+        22px;
+
+      font-size: 25px;
+
+      font-weight: normal;
+
+      font-style: italic;
+
+      color: #805665;
+    }
+
+
+    article p {
+      margin:
+        0
+        0
+        24px;
+
+      font-size: 18px;
+
+      line-height: 1.85;
+    }
+
+
+    article em {
+      color: #735361;
+    }
+
+
+    .section-break {
+      margin:
+        55px
+        0;
+
+      text-align: center;
+
+      color:
+        rgba(139, 103, 59, 0.65);
+
+      letter-spacing: 11px;
+
+      font-size: 18px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .article-footer {
+      text-align: center;
+
+      margin-top: 45px;
+    }
+
+
+    .article-footer a {
+      display: inline-block;
+
+      padding:
+        11px
+        20px;
+
+      background:
+        rgba(248, 232, 211, 0.72);
+
+      border-radius: 999px;
+
+      color: #76505d;
+
+      text-decoration: none;
+
+      font-style: italic;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      .topbar nav {
+        gap: 15px;
+      }
+
+
+      .topbar a {
+        font-size: 13px;
+      }
+
+
+      .article-wrap {
+        width: 92%;
+
+        margin-top: 40px;
+      }
+
+
+      article {
+        padding:
+          38px
+          26px
+          48px;
+
+        border-radius: 38px;
+      }
+
+
+      article p {
+        font-size: 17px;
+
+        line-height: 1.75;
+      }
+
+
+      .article-header h1 {
+        font-size:
+          clamp(
+            40px,
+            12vw,
+            60px
+          );
+      }
+
+
+      .contents {
+        padding:
+          20px
+          22px;
+
+        border-radius: 30px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body
+  style="
+    background-image: url('../../images/pink-start2.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  "
+>
+
+
+  <header class="topbar">
+
+    <nav>
+
+      <a href="/">
+        journal
+      </a>
+
+      <a href="/maseniszta/">
+        maseniszta
+      </a>
+
+      <a href="/#archive">
+        archive
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <main class="article-wrap">
+
+
+    <header class="article-header">
+
+      <a
+        class="back-link"
+        href="/"
+      >
+        ← vissza az Online Clutterre
+      </a>
+
+
+      <h1>
+        A manoszféra lenyomatai a magyar popkultúrában
+      </h1>
+
+
+      <div class="article-meta">
+        ONLINE CLUTTER / 2026
+      </div>
+
+
+      <div class="little-divider">
+        ✦ ☾ ✧
+      </div>
+
+    </header>
+
+
+
+    <div class="contents">
+
+      <div class="contents-title">
+        tartalom
+      </div>
+
+      <a href="#bevezetes">
+        Bevezetés
+      </a>
+
+      <a href="#kozossegi-media">
+        Közösségi média
+      </a>
+
+      <a href="#weaponized-incompetence">
+        Weaponized incompetence
+      </a>
+
+      <a href="#incelek">
+        Incelek
+      </a>
+
+      <a href="#nyolcvan-husz">
+        80/20 szabály
+      </a>
+
+    </div>
+
+
+
+    <article>
+
+
+      <!-- BEVEZETÉS -->
+
+      <section id="bevezetes">
+
+        <h2>
+          Bevezetés
+        </h2>
+
+        <p>
+          Az incel mozgalom természetesen amerikából indult és lassan
+          elterjedt világszerte az internet által, de miért, hogyan és
+          milyen problémákat tud okozni ez nekünk a mindennapokban?
+        </p>
+
+        <p>
+          Az incel az angol “involuntary celibate” kifejezés rövidítése,
+          ami magyarul önkétlen cölibátust jelent. Azokat a férfiakat
+          jelöli akik szeretnének romantikus vagy szexuális kapcsolatot
+          kialakítani, de külső vagy belső okok miatt ez tartósan nem
+          sikerül nekik.
+        </p>
+
+        <p>
+          A modern incel ideológia kialakulása többek között összefügg
+          azzal, ahogyan egyes férfiak megélik a hagyományos nemi szerepek
+          átalakulását, a nők nagyobb társadalmi és gazdasági
+          önállóságát, valamint a párkapcsolati normák változását.
+        </p>
+
+      </section>
+
+
+      <div class="section-break">
+        ✦ ✧ ✦
+      </div>
+
+
+
+      <!-- KÖZÖSSÉGI MÉDIA -->
+
+      <section id="kozossegi-media">
+
+        <h2>
+          Közösségi média
+        </h2>
+
+        <p>
+          A tiktokon sokat látni olyan nőket akik megosztják a
+          mindennapjaikat akár vlogok akár storytimeok keretében, ami
+          azzal jár, hogy pár házasságba betekintést nyernek a fiatal
+          lányok és meghallgathatják a mindennapi nehézségeket.
+        </p>
+
+        <p>
+          Ezek sokszor lehetnek egészen apró dolgok, mint a szennyes
+          elhagyása a házon belül vagy a koszos tányérok nem elmosása
+          viszont találkozhatunk egészen szembetűnő problémákkal is,
+          minthogy a férfi kifejezetten nem szeret a gyerekeivel vagy
+          a feleségével időt tölteni esetleg mentálisan/ fizikálisan
+          bántja őket.
+        </p>
+
+        <p>
+          Az ilyen fajta videok, főleg a szélsőséges esetek, az
+          algoritmus által sok felhasználóhoz eljutnak és minél többen
+          reagálnak rá annál virálisabbak lesznek. Ez megadhatja a
+          fiatal lányoknak azt az illóziót hogy minden házasság ilyen és
+          minden férfi problémás, ami természetesen nem igaz, de ezen
+          algoritmusok által lesznek az ilyen videók a trend része.
+        </p>
+
+        <p>
+          Ami szinte mindig közös ezekben a tiktokokban a komment
+          szekció. Sokan már annyira sok hasonló esettel találkoztak,
+          hogy teljesen elérzékenyülve a témától kommentelnek a
+          készítőnek.
+        </p>
+
+        <p>
+          Trend lett ezek alatt a videók alatt olyan kommenteket
+          posztolni, hogy “ ha nem hagyod el ne is oszd meg velünk”
+          “srácok menjünk innen a kommentekben megvédi a férjét”, és a
+          <strong>weaponized incompetence</strong> vagyis a fegyverként
+          használt alkalmatlanság kifejezés használata.
+        </p>
+
+      </section>
+
+
+
+      <!-- WEAPONIZED INCOMPETENCE -->
+
+      <section id="weaponized-incompetence">
+
+        <h2>
+          Weaponized incompetence
+        </h2>
+
+        <p>
+          A weaponized incompetence arról szól, hogy a férj nem azért
+          nem csinálja meg a mosogatást mert nem tudja megcsinálni,
+          hanem mert nem szeretné megcsinálni.
+        </p>
+
+        <p>
+          Mivel egy felnőtt emberről beszélünk nem különleges képesség
+          főzni, mosni, takarítani tehát nagy valószínűséggel meg tudják
+          csinálni ezeket a feladatokat, (végső esetben megtanítható),
+          de itt sokkal inkább arról beszélünk, hogy valójában nem
+          szeretnék megcsinálni. És hogyan lehet kibújni a feladat alól?
+          Ha elégszer rosszul csinálod meg, egy idő után nem leszel
+          megkérve hogy csináld meg.
+        </p>
+
+        <p>
+          Ha folyamatosan én mosogatok a háztartásban, de a többi
+          résztvevő azt veszi észre hogy foltos, koszos maradt minden
+          és amúgyis ezer évig hagytam állni a koszos dolgokat a
+          csapban, valakinek, akinek nagyobb az életszínvonal elvárása,
+          meg fogja csinálni helyettem.
+        </p>
+
+        <p>
+          Ezek a problémák természetesen nem újkeletűek, körbe nézhetünk
+          a nagyszüleink generációjában, vannak feladatok amiket a férfi
+          nem fog megcsinálni, ezeket nevezhetjük “szerepeknek” is. Az
+          anyuka szerepe a háztartás fenntartása, főzés-sütés, gyerekről
+          gondoskodás, míg az apuka dolgozik a munkahelyén majd a
+          kertben, olvassa a híreket, megszereli a dolgokat.
+        </p>
+
+        <p>
+          Önmagában a munkamegosztással természetesen nincs probléma:
+          egy kapcsolatban teljesen működőképes lehet, ha bizonyos
+          feladatokat rendszeresen az egyik, másokat a másik fél végez.
+          A probléma inkább akkor kezdődik, amikor ezek a szerepek nem
+          megegyezésen, hanem kizárólag nemi elvárásokon alapulnak, és
+          egyik fél akkor sem hajlandó kilépni belőlük, amikor arra
+          szükség lenne.
+        </p>
+
+
+        <h3>
+          Mental load
+        </h3>
+
+        <p>
+          Ehhez szorosan kapcsolódik a <em>mental load</em> fogalma,
+          vagyis a háztartás működtetésének láthatatlan mentális terhe
+          is. Nemcsak az számít ugyanis, hogy ki végzi el fizikailag a
+          feladatokat, hanem az is, hogy kinek kell folyamatosan észben
+          tartania, megszerveznie és delegálnia őket.
+        </p>
+
+        <p>
+          Sokat láthatjuk ezekben a tiktok videókban azt az alap
+          szituációt is amikor a férfi fél intézi a bevásárlást, de nem
+          találja meg az üzletben a termékeket így telefonon segítséget
+          kér a női féltől. Ilyenkor neki kell gondolkodnia az hol lehet
+          az üzletben vagy milyen alternatívák felelnek meg helyette.
+          Esetleg az is előfordulhat, hogy magát a bevásárló listát is
+          a női fél nyomta a férfi kezébe mielőtt ő elindult.
+        </p>
+
+        <p>
+          Ilyen esetben magát a bevásárlást a férfi végzi el mint
+          feladat, de a nőnek kellett észben tartani, hogy mikor kéne
+          menni vásárolni, miket kéne venni otthonra, mit főzzön jövő
+          héten és milyen hozzávalók kellenek ahhoz.
+        </p>
+
+        <p>
+          Sokszor akár “vicces” videókban is találkozhatunk ezzel a
+          jelenséggel, hogy az apuka nincs tisztában a gyerek orvosának
+          a nevével, a gyerek szülinapjával, osztályával, tanáraival,
+          allergiáival, legjobb barátaival. Ezek nem nemhez köthető
+          tudások ezeket természetesen mindkét szülőnek tudni kellene,
+          de sajnos nem ez az általános észrevétel ezekben a körökben.
+        </p>
+
+        <p>
+          Valójában aki a mentális terhet viseli a kapcsolatban, az
+          ugyan úgy elvégzi a munkát mint az aki fizikálisan végzi el,
+          így ennek köszönhetően sosem tud fennmaradni az egyenlőség a
+          munkamegosztásban.
+        </p>
+
+
+        <h3>
+          Bare minimum
+        </h3>
+
+        <p>
+          Ezeknek, a közvetett tapasztalatoknak köszönhetően a fiatal
+          nőkben elindult egy új kifejezés az elvárásokkal kapcsolatban
+          a “bare minimum”, miszerint a lehető legalapabb dolgokat
+          várják el a férfiaktól és sokszor még az sem megüthető.
+        </p>
+
+        <p>
+          A “bare minimum” alatt olyan elvárásokat szoktak emlegetni
+          mint mindennapi higiénia betartása, környezetének rendben
+          tartása, érdeklődési kör megléte és a nemek közötti egyenlőség
+          elismerése.
+        </p>
+
+        <p>
+          Elsőre mindez távolinak tűnhet az incel kultúrától, pedig
+          ugyanannak a társadalmi változásnak két különböző oldaláról
+          beszélünk, miközben a fiatal nők egy része egyre kevésbé
+          fogadja el a hagyományos párkapcsolati szerepeket, bizonyos
+          online férfiközösségek ezt veszteségként, sőt
+          igazságtalanságként értelmezik.
+        </p>
+
+        <p>
+          Tehát a fiatal nők körében elindult egy változás. Máshogy
+          állnak hozzá a mai férfiakhoz és más elvárásaik vannak az
+          élettől. Sokan mivel félnek bekerülni egy olyan házasságba
+          mint amit láttak a szüleik/nagyszüleiktől vagy akár csak a
+          tiktokokból, ezért inkább válogatósabbá válnak.
+        </p>
+
+        <p>
+          Fontosabb lett hogy megteremtsék maguktól a biztonságot, a
+          stabíl környezetet és a karriert és olyan férfiakat engedjenek
+          be az életünkbe akik a maguktól felállított életszínvonalhoz
+          hozzá tudnak tenni és nem kevesebbek.
+        </p>
+
+      </section>
+
+
+      <div class="section-break">
+        ☾ ✦ ☾
+      </div>
+
+
+
+      <!-- INCELEK -->
+
+      <section id="incelek">
+
+        <h2>
+          Incelek
+        </h2>
+
+        <p>
+          Ez nem egy új fogalom, még 1993ban született meg ez a
+          kifejezés egy kanadai egyetemista “Alana” által, aki
+          létrehozott egy “Alana’s Involuntary Celibacy Project” nevű
+          oldalt aminek az volt a célja hogy egy támogató hálózata legyen
+          a magányosoknak, szüzeknek akiknek valamilyen okból nem volt
+          még, vagy hosszú ideje nem volt kapcsolata.
+        </p>
+
+        <p>
+          Ezt a közösséget Alana egy idő után magára hagyta, ám az ott
+          összegyűltek folytatták a diskurzust, ami gyorsan átváltott
+          frusztrált, agresszív közösségé.
+        </p>
+
+        <p>
+          Az incel közösségek később egy nagyobb online ökoszisztéma,
+          az úgynevezett manoszféra részévé váltak.
+        </p>
+
+        <p>
+          Ide sorolnak több, egymással részben átfedő közösséget is,
+          például a Men’s Rights Activists, a Men Going Their Own Way,
+          a pickup artist és a red pill közösségeket.
+        </p>
+
+        <p>
+          Az elképzelés szerint a nők lehetetlen elvárásokkal válogatnak
+          a férfiak között, mindig csak a tökéletesen szép férfiakat
+          választják így nekik már nincs lehetőségük érvényesülni az
+          életben.
+        </p>
+
+        <p>
+          A nőknek túl nagy hatalma van a szex és a romantikus
+          kapcsolatok terén és szándékosan megvonják a férfiaktól a
+          szexet és ezt ők személyes támadásnak és kudarcnak élik meg.
+        </p>
+
+      </section>
+
+
+
+      <!-- 80/20 -->
+
+      <section id="nyolcvan-husz">
+
+        <h2>
+          A 80/20 szabály
+        </h2>
+
+        <p>
+          Az incel közösségekben gyakran megjelenik az úgynevezett
+          „80/20 szabály”, amely szerint a férfiak nagyjából 20
+          százaléka számít igazán vonzónak és kívánatosnak, miközben a
+          nők mintegy 80 százaléka ezért a szűk csoportért verseng.
+        </p>
+
+        <p>
+          Ebben a világképben a párválasztás nem egyéni ízlés, érzelmi
+          kötődés kérdése, hanem egyfajta hierarchikus rendszer, amelyben
+          a legvonzóbb férfiak jutnak hozzá a legtöbb szexuális
+          lehetőséghez.
+        </p>
+
+        <p>
+          Egyes incel közösségekben az a meggyőződés, hogy a férfiak
+          fennmaradó 80 százaléka hosszú távon kiszorul a
+          családalapításról.
+        </p>
+
+        <p>
+          Ezt nem egyszerűen személyes kudarcként értelmezik, hanem
+          biológiai és társadalmi veszteségként is: úgy gondolják, hogy
+          mivel a nők kizárólag a „legjobb génállománnyal” rendelkező,
+          attraktív férfiakat választják, az átlagosnak vagy kevésbé
+          vonzónak tartott férfiak vérvonala idővel megszakad.
+        </p>
+
+        <p>
+          A szélsőségesebb körökben ez nem csak el feltételezés hogy a
+          nők résztvevői ennek a folyamatnak, hanem meggyőződésük, hogy
+          tudatosan csinálják ezt ellenük.
+        </p>
+
+        <p>
+          Ezekért a folyamatokért az incelek a nők emancipációját és a
+          feminizmust okolják, mivel a nőknek túl nagy hatalmat adtak így
+          a mérleg már nem is egyenlő, hanem a nők a hatalmon lévők,
+          akiken múlik az ő életük és vérvonaluk.
+        </p>
+
+        <p>
+          Tehát ebből következik, hogy a feminizmust elítélik és innen
+          már rövid út vezette őket a nő gyűlölethez.
+        </p>
+
+      </section>
+
+
+    </article>
+
+
+
+    <div class="article-footer">
+
+      <a href="/">
+        ← vissza a journalhoz
+      </a>
+
+    </div>
+
+
+  </main>
+
+
+</body>
+
+</html>
