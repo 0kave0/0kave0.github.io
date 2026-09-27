@@ -3,98 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Online Clutter</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="floating star-one">✦</div>
-  <div class="floating star-two">★</div>
-  <div class="floating flower-one">✿</div>
-  <div class="floating moon">☾</div>
-
-  <header class="hero">
-
-    <div class="small-note">
-      ✧ personal internet scrapbook ✧
-    </div>
-
-    <h1>Online<br>Clutter</h1>
-
-    <p class="subtitle">
-      things I can't stop thinking about
-    </p>
-
+  <header class="topbar">
     <nav>
-      <a href="/">journal</a>
+      <a class="active" href="/">journal</a>
       <a href="/maseniszta/">maseniszta</a>
       <a href="#archive">archive</a>
     </nav>
-
   </header>
-
 
   <main>
 
-    <div class="decoration">
-      ✦ ⋆ ✿ ⋆ ☾ ⋆ ✦
-    </div>
+    <section class="hero">
+      <div class="hero-paper">
+        <span class="decor decor-1">✦</span>
+        <span class="decor decor-2">☾</span>
+        <span class="decor decor-3">✧</span>
 
-    <article>
+        <h1>Online<br>Clutter</h1>
 
-      <div class="tape"></div>
-
-      <p class="date">
-        september 27, 2026
-      </p>
-
-      <h2>
-        Incelektől a new wave magyar popkultúráig
-      </h2>
-
-      <p class="intro">
-        Ide jön majd a bejegyzésed rövid bevezetője.
-        Internet, kultúra, társadalom és minden más,
-        ami éppen túl sokáig marad a fejemben.
-      </p>
-
-      <a class="read-more" href="#">
-        read more →
-      </a>
-
-      <div class="article-star">✦</div>
-
-    </article>
+        <p>
+          notes / culture / internet / things i keep thinking about
+        </p>
+      </div>
+    </section>
 
 
-    <div class="tiny-note">
-      collected thoughts / digital debris / strange little things
-    </div>
+    <section class="posts">
+
+      <article class="post-card post-one">
+
+        <div class="image-frame">
+          <img
+            src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e"
+            alt="virágok"
+          >
+        </div>
+
+        <div class="post-content">
+          <span class="date">Sep 24, 2026</span>
+
+          <h2>
+            Incelektől a new wave magyar popkultúráig
+          </h2>
+
+          <p>
+            Ide kerülhet majd a bejegyzés rövid bevezetője.
+            Internet, kultúra, társadalom és minden más,
+            ami túl sokáig marad a fejemben.
+          </p>
+
+          <a href="#">Read more →</a>
+        </div>
+
+      </article>
 
 
-    <article class="second">
+      <article class="post-card post-two">
 
-      <div class="tape pink"></div>
+        <div class="image-frame">
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+            alt="esti hangulat"
+          >
+        </div>
 
-      <p class="date">
-        september 18, 2026
-      </p>
+        <div class="post-content">
+          <span class="date">Sep 12, 2026</span>
 
-      <h2>
-        Egy másik gondolat az internetről
-      </h2>
+          <h2>
+            On Digital Gardens and Softer Spaces
+          </h2>
 
-      <p class="intro">
-        Egy következő bejegyzés rövid előnézete.
-      </p>
+          <p>
+            Gondolatok arról, hogyan lehet az internet kevésbé steril,
+            személyesebb és kicsit szebb hely.
+          </p>
 
-      <a class="read-more" href="#">
-        read more →
-      </a>
+          <a href="#">Read more →</a>
+        </div>
 
-    </article>
+      </article>
+
+    </section>
 
   </main>
 
